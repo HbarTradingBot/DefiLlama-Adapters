@@ -1,0 +1,18 @@
+const { fetchURL } = require("../helper/utils")
+
+async function fetch() {
+  const response = await fetchURL("https://www.geckoterminal.com/hedera-hashgraph/pools/0x6402613ee4167832a29531ca67170c91a3304a1d")
+
+  return response.data.tvl.locked.liquidity
+}
+
+module.exports = {
+  timetravel: false,
+  doublecounted: true,
+  methodology:
+    "The displayed value represents the Total Value Locked (TVL) in USD of HTAI token",
+  hedera: {
+    fetch
+  },
+  fetch
+};
